@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <video autoplay muted loop id="myVideo">
+      <source src="media/bgvd.mp4" type="video/mp4">
+  </video>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="jathin-intro.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+
+<title>Sign Up Page</title>
+</head>
+<!--jathin part start-->
+<body onload="myfunction()">
+
+  <div id="loading"> 
+    <video autoplay muted loop id="mypre">
+        <source src="bg image and videos/Polygon - 6824.mp4">
+      </video>
+  </div>
+  
+  <div class="cursor"></div>
+              <div class="cursor2"></div>
+          <script>
+              var preloader = document.getElementById('loading');
+              setTimeout(function myfunction()
+              {
+                  preloader.style.display = 'none';
+              }, 5000);
+          </script>
+          <script>
+              var cursor = document.querySelector(".cursor")
+              var cursor2 = document.querySelector(".cursor2")
+              document.addEventListener("mousemove", function(e)
+              {
+                  cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+              });
+  
+          </script>
+  
+  
+  <!-- jathin part end-->
+  <div class="container">
+      <form id="form" class="form">
+             <center><h1 class="main-heading">Create Account</h1> </center>
+    <div class="form-control">
+      <label for="username">Username</label>
+      <input type="text" placeholder="Username" id="username" />
+      <small>Error message</small>
+    </div>
+    <div class="form-control">
+      <label for="username">Email</label>
+      <input type="email" placeholder="Email: abc@gmail.com" id="email" />
+      <small>Error message</small>
+    </div>
+    <div class="form-control">
+      <label for="username">Password</label>
+      <input type="password" placeholder="Password" id="password"/>
+      <i class="far fa-eye-slash" id="show" onclick="myFunction()"></i>
+      <i class="far fa-eye" id="hide" onclick="myFunction()"></i>
+      <small>Error message</small>
+    </div>
+    <div class="form-control">
+      <label for="username">Confirm Password</label>
+      <input type="password" placeholder="Confirm Password" id="password2"/>
+      <small>Error message</small>
+    </div>
+    
+            
+      <button onclick="location.href='index.html'">Submit</button>
+            
+      </div>
+     </form>
+       
+    </div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

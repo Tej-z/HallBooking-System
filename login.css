@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+* {
+	box-sizing: border-box;
+
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+  background: url("images/banner.jpg") no-repeat center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+  color: white;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+
+.container h1{
+    
+ padding: 20px 40px;
+  color: #ff0000;
+  --color1: #ff0404;
+  --color2: #c21313;
+  --color3: #9f0404;
+  --color4: #d51919dc;
+  --interval: 1s;
+  display: block;
+  text-shadow: 
+    0 0 10px var(--color1),
+    0 0 20px var(--color2),
+    0 0 40px var(--color3),
+    0 0 80px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker  1s infinite;
+  font-family: Bad Script;
+}
+
+@keyframes flicker {
+    50% {
+      color: black;
+      filter: saturate(200%) hue-rotate(20deg);
+    }
+  }
+
+.container {
+	border-radius: 5px;
+	overflow: hidden;
+	width: 400px;
+	max-width: 100%;
+    background-color: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.0px );
+  -webkit-backdrop-filter: blur( 4.0px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+.header h2 {
+	margin: 0;
+    
+}
+
+.form {
+	padding: 30px 40px;	
+}
+
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+
+.form-control label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control input {
+	border: 2px solid #ffb7c5;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-control.success input {
+	border-color: slateblue;
+}
+
+.form-control.error input {
+	border-color: red;
+}
+
+.form-control small {
+	color: red;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible;
+}
+.form-control i{
+  position: absolute;
+  right: 10px;
+  top: 45%;
+  
+  cursor: pointer;
+  margin-bottom: 10px;
+
+  font-size: 18px;
+}
+#hide{
+  display: none;
+}
+.form button {
+    background-color: #ffb7c5;
+    border: 2px solid #ffb7c5;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+a{
+  text-decoration: none;
+}
+a:link{
+  color: white;
+ }
+ a:visited{
+  color: yellow;
+ }
+ a:hover{
+  color: red;
+ }
+.social-media a{
+  display: inline-block;
+  font-size: 30px;
+  width: 75px;
+  height: 90px;
+  line-height: 100px;
+  text-align: center;
+  color: #000000;
+  margin-top: 15px ;
+  transition: .4s linear;
+  position: relative;
+}
+
+.social-media a::before, .social-media a::after{
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: .4s linear;
+}
+
+.social-media  a:hover{
+  transform: scale(.8);
+}
+
+.social-media a:hover::before{
+  border-left: 4px solid;
+  border-right: 4px solid;
+  transform: skewX(20deg);
+}
+
+.social-media a:hover::after{
+  border-top: 4px solid;
+  border-bottom: 4px solid;
+  transform: skewY(-20deg);
+}
+

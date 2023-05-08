@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <video autoplay muted loop id="myVideo">
+      <source src="media/bgvd.mp4" type="video/mp4">
+  </video>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="jathin-intro.css"
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+
+<title>Log In Page</title>
+</head>
+<body onload="myfunction()">
+
+  <div id="loading"> 
+    <video autoplay muted loop id="mypre">
+        <source src="bg image and videos/Polygon - 6824.mp4">
+      </video>
+  </div>
+  
+  <div class="cursor"></div>
+              <div class="cursor2"></div>
+          <script>
+              var preloader = document.getElementById('loading');
+              setTimeout(function myfunction()
+              {
+                  preloader.style.display = 'none';
+              }, 5000);
+          </script>
+          <script>
+              var cursor = document.querySelector(".cursor")
+              var cursor2 = document.querySelector(".cursor2")
+              document.addEventListener("mousemove", function(e)
+              {
+                  cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+              });
+  
+          </script>
+  
+  
+  <div class="container">
+    
+      <form id="form" class="form">
+             <center><h1 class="main-heading">Log In</h1> </center>
+    <div class="form-control">
+      <label for="username">Username</label>
+      <input type="text" placeholder="Username" id="username" />
+      <small>Error message</small>
+    </div>
+   
+    <div class="form-control">
+      <label for="username">Password</label>
+      <input type="password" placeholder="Password" id="password"/>
+      <i class="far fa-eye-slash" id="show" onclick="myFunction()"></i>
+      <i class="far fa-eye" id="hide" onclick="myFunction()"></i>
+      <small>Error message</small>
+    </div>
+            Already have an account ?<a href="signup.html">Sign Up</a><br>
+            Forgot <a href="password.html">Password</a> ?
+        
+        <button onclick="location.href='index.html'">Submit</button>
+        <div class="social-media">
+         <a target="_blank" href=""><i class="fab fa-facebook-f"></i></a>
+         <a target="_blank" href=""><i class="fab fa-instagram"></i></a>
+         <a target="_blank" href=""><i class="fab fa-twitter"></i></a>
+         <a target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+     </form>
+
+    </div>
+
+
+<script>
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  
+  checkInputs();
+});
+
+function checkInputs() {
+  // trim to remove the whitespaces
+  const usernameValue = username.value.trim();
+  const passwordValue = password.value.trim();
+ 
+  
+  if(usernameValue === '') {
+    setErrorFor(username, 'Username cannot be blank');
+  }else if(usernameValue.search(/[A-Z]/)===-1){
+   setErrorFor(username,'Username should have atleast 1 uppercase letter');
+   return false;
+  }else {
+    setSuccessFor(username);
+  }
+  
+ 
+  
+  if(passwordValue === '') {
+    setErrorFor(password, 'Password cannot be blank');
+  } else {
+    setSuccessFor(password);
+  }
+  if(passwordValue.length<8){
+    setErrorFor(password,'Password should have atleast 8 characters');
+    return false;
+  }else if(passwordValue.search(/[0-9]/)===-1){
+    setErrorFor(password,'Password should have atleast 1 number');
+    return false;
+  }else if(passwordValue.search(/[a-z]/)===-1){
+    setErrorFor(password,'Password should have atleast 1 lowercase letter');
+    return false;
+  }else if(passwordValue.search(/[A-Z]/)===-1){
+    setErrorFor(password,'Password should have atleast 1 uppercase letter');
+    return false;
+  }else if(passwordValue.search(/[!\@\#\$\%\^\&\*\(\)\_\+\-\,\<\=\>\?]/)==-1){
+    setErrorFor(password,'Password should have atleast 1 special character');
+    return false;
+  }
+}
+
+function setErrorFor(input, message) {
+  const formControl = input.parentElement;
+  const small = formControl.querySelector('small');
+  formControl.className = 'form-control error';
+  small.innerText = message;
+}
+
+function setSuccessFor(input) {
+  const formControl = input.parentElement;
+  formControl.className = 'form-control success';
+}
+function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type==="password"){
+    x.type="text"
+    document.getElementById('hide').style.display="inline-block";
+    document.getElementById('show').style.display="none";
+  }
+  else{
+    x.type="password"
+    document.getElementById('hide').style.display="none";
+    document.getElementById('show').style.display="inline-block";
+  }
+}
+</script>
+</body>
+</html>
+
+
