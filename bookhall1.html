@@ -1,90 +1,134 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Hall booking form</title>
-	<link href="bookhall.css" rel="stylesheet">
-</head>
-<body>
-	<div class="form-box">
-		<div class="header-text">
-			Hall Booking Form
-		</div>
-		<form>
-		<table width="100%"  border="0" cellpadding="0" cellspacing="0" class="ptry">
-			
-			  
-			  
-			<tr>
-			<td width="30%" align="right">Date:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td><input  type="date" id="booking" name="booking"></td>
-			</tr>
-
-            <tr>
-                <td width="30%" align="right">Start Time:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td><input type="time" id="appt" name="appt"></td>
-
-            </tr>
-                <td width="30%" align="right">End Time:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td><input type="time" id="appt" name="appt"></td>
-            <tr>
-
-            </tr>
-
-			<tr>
-			<td width="30%" align="right">Your name:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td><input placeholder="Your Name" type="text" name="username"></td>
-			</tr>
-			
-			<tr>
-			<td width="30%" align="right">Email id:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td><input placeholder="Your Email Address" type="text"></td>
-			</tr>
-			
+<html lang="en">
+  <head>
+    <title> Booking Form - XYZ Hotels </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel = "stylesheet" href = "bookhall.css">
+  </head>
+  <body>
+ 
+	<!-- OUR BOOKING FORM MARKUP -->
+	<div class="smart-wrap">
+		<div class="smart-forms smart-container wrap-2">
 		
-			<tr>
-		      	<td width="30%" align="right">Your Mobile No.:&nbsp;&nbsp;&nbsp;&nbsp; </td>
-		        <td><input id="mobile" placeholder="Your Mobile no." name="mobile" type="text" value="" maxlength="10"/></td>
-		      </tr>
-
-			<tr>
-		      	<td width="30%" align="right">Seminar Hall Name:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-		        <td>
-		        	<select >
-						<option value="-1">--Select Hall--</option>
-						<option value="1169">Vyasa Hall</option>
-						<option value="1172">Valmiki Hall</option>
-						<option value="1173">Amritheshwari Hall</option>
-						<option value="1003">Sudhamani Hall</option>
-						<option value="1177">Rama Hall</option>
-						<option value="1178">Krishna Hall</option>
-						
-					</select>
-		        </td>
-		      </tr> 
-			  
-			<tr>
-			<td width="30%" align="right">Number of persons expected:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td><input placeholder="100" type="text" name="username"></td>
-			</tr>
-			  
-			<tr>
-		      	<td width="30%" align="right">Purpose of event:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-		        <td> 
-				<input placeholder="Club events" type="text" name="charCounter" style="background: white;border: 1px;">
-		        </td>
-		    </tr>
+		  <div class="form-header header-primary">
+			<h4><i class="fa fa-calendar"></i>Make Room Reservations in Minutes</h4>
+		  </div>
+		  
+		  <form method="post" action="/" id="booking-form">
+			<div class="form-body">
 			
-			
+			 <!-- OUR FORM ELEMENTS WILL GO HERE -->                                                
+			 <div class="section">
+				<label for="guestname" class="field-label">Please Enter Your Name</label>
+				<label for="guestname" class="field prepend-icon">
+				  <input type="text" name="guestname" id="guestname" class="gui-input" required="" placeholder="John Doe/Jane Doe">
+				  <span class="field-icon"><i class="fa fa-user"></i></span>  
+				</label>
+			  </div>
+							
+			  <div class="frm-row">
+				<div class="section colm colm6">
+				  <label for="guestemail" class="field-label">Email Address</label>
+				  <label for="guestemail" class="field prepend-icon">
+					<input type="email" name="guestemail" id="guestemail" class="gui-input" required="" placeholder="john@something.com">
+					<span class="field-icon"><i class="fa fa-envelope"></i></span>  
+				  </label>
+				</div>
+				
+				<div class="section colm colm6">
+				  <label for="guestelephone" class="field-label">Telephone / Mobile</label>
+				  <label for="guestelephone" class="field prepend-icon">
+					<input type="text" name="guestelephone" id="guestelephone" class="gui-input" required="" placeholder="Telephone / Moble Number">
+					<span class="field-icon"><i class="fa fa-phone-square"></i></span>  
+				  </label>
+				</div>
+			  </div>
+			  <div class="frm-row">
+				<div class="section colm colm6">
+				  <label for="adults" class="field-label">Number of Adults</label>
+				  <label for="adults" class="field prepend-icon">
+					<input type="number" id="adults" name="adults" class="gui-input" required="" placeholder="Number of adults">
+					<span class="field-icon"><i class="fa fa-users"></i></span>  
+				  </label>
+				</div>
+				
+				<div class="section colm colm6">
+				  <label for="children" class="field-label">Number of Children</label>
+				  <label for="children" class="field prepend-icon">
+					<input type="number" id="children" name="children" class="gui-input" required="" placeholder="Number of children">
+					<span class="field-icon"><i class="fa fa-users"></i></span>  
+				  </label>
+				</div>
+			  </div>
+			  <div class="frm-row">
+				<div class="section colm colm6">
+				  <label for="checkin" class="field-label">Check-in Date</label>
+				  <label for="checkin" class="field prepend-icon">
+					<input type="text" id="checkin" name="checkin" class="gui-input" required="" placeholder="mm/dd/yyyy">
+					<span class="field-icon"><i class="fa fa-calendar"></i></span>  
+				  </label>
+				</div>
+				
+				<div class="section colm colm6">
+				  <label for="checkout" class="field-label">Check-out Date</label>
+				  <label for="checkout" class="field prepend-icon">
+					<input type="text" id="checkout" name="checkout" class="gui-input" required="" placeholder="mm/dd/yyyy">
+					<span class="field-icon"><i class="fa fa-calendar"></i></span>  
+				  </label>
+				</div>
+			  </div>
+			  <div class="spacer-t20 spacer-b30">
+				<div class="tagline"><span>Please answer these questions for a pleasant stay</span></div>
+			  </div>
+			  <div class="frm-row">
+				<div class="option-group field">
+				
+				  <div class="section colm colm6">
+					<label class="switch">
+					  <input type="checkbox" name="switch1" id="switch1" value="switch1">
+					  <span class="switch-label" data-on="YES" data-off="NO"></span>
+					  <span>Will you be bringing a pet?</span>
+					</label>
+				  </div>
+					  
+				  <div class="section colm colm6">
+					<label class="switch">
+					  <input type="checkbox" name="switch2" id="switch2" value="switch2">
+					  <span class="switch-label" data-on="YES" data-off="NO"></span>
+					  <span>Do you need us to pick you up?</span>
+					</label>
+				  </div>
+							
+				</div>
+			  </div>
+			  <div class="section">
+				<label for="comment" class="field-label">Anything else we should know about?</label>
+				<label for="comment" class="field prepend-icon">
+				  <textarea class="gui-textarea" id="comment" name="comment" placeholder="Let us know about any special accommodation needs"></textarea>
+				  <span class="field-icon"><i class="fa fa-comments"></i></span>
+				  <span class="input-hint"> 
+					<strong>Please:</strong> Be as descriptive as possible
+				  </span>   
+				</label>
+			  </div>
 
-			<tr><td></td>
-				<td><button onclick="location.href='index.html'" style="font-family:Poppins;" >Book Hall</button></td>
-				</tr>  
-		</table>
-		</form>
-	
-	  
-	</div>
-	
-</body>
+			</div>
+			<div class="form-footer">
+			  <button type="submit" class="button btn-primary">Confirm Booking</button>
+			  <button type="reset" class="button">Cancel</button>
+			</div>
+			
+		  </form>
+		    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+			<script type="text/javascript" src="js/jquery.form.min.js"></script>
+			<script type="text/javascript" src="js/jquery-ui-custom.min.js"></script>
+			<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+			<script type="text/javascript" src="js/additional-methods.min.js"></script>
+
+		</div>
+	  </div>
+ 
+  </body>
 </html>
