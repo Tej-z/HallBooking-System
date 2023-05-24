@@ -1,109 +1,122 @@
-/*  import google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
-
-
-
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 body {
-	font-family:Poppins;
-	font-size: 16px;
-	color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgb(130, 106, 251);
 }
-.form-box {
-	background-color: rgba(0, 0, 0, 0.5);
-	margin: auto auto;
-	padding: 40px;
-	border-radius: 5px;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: 1070px;
-	height: 590px;
+.container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
-.form-box:before {
-	background-image: url("images/college1.jpg");
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	content: "";
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	z-index: -1;
-	display: block;
-	filter: blur(2px);
+.container header {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
 }
-.form-box .header-text {
-	font-size: 32px;
-	font-weight: 600;
-	padding-bottom: 30px;
-	text-align: center;
+.container .form {
+  margin-top: 30px;
 }
-.form-box input {
-	margin: 5px 0px;
-	border: none;
-	padding: 8px;
-	border-radius: 4px;
-	width: 70%;
-	font-size: 15px;
-	font-family: poppins;
-	
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
 }
-.form-box input[type=checkbox] {
-	display: none;
+.input-box label {
+  color: #333;
 }
-.form-box label {
-	position: relative;
-	margin-left: 5px;
-	margin-right: 10px;
-	top: 5px;
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	cursor: pointer;
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
 }
-.form-box label:before {
-	content: "";
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	border-radius: 5px;
-	position: absolute;
-	left: 0;
-	bottom: 1px;
-	background-color: #ddd;
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
-.form-box input[type=checkbox]:checked+label:before {
-	content: "\2713";
-	font-size: 20px;
-	color: #000;
-	text-align: center;
-	line-height: 20px;
+.form .column {
+  display: flex;
+  column-gap: 15px;
 }
-.form-box span {
-	font-size: 14px;
+.form .gender-box {
+  margin-top: 20px;
 }
-.form-box button {
-	background-color: crimson;
-	color: #fff;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	width: 30%;
-	font-size: 18px;
-	padding: 10px;
-	margin: 20px 0px;
-	align: center;
+.gender-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
 }
-.form-box button:hover {
-    background-color: black;
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
 }
-span a {
-	color: #BBB;
+.form .gender {
+  column-gap: 5px;
+}
+.gender input {
+  accent-color: rgb(130, 106, 251);
+}
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+.gender label {
+  color: #707070;
+}
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(130, 106, 251);
+}
+.form button:hover {
+  background: rgb(88, 56, 250);
+}
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
 }

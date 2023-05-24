@@ -1,134 +1,81 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="bookhall.css">
+<!---Coding By CodingLab | www.codinglabweb.com--->
 <html lang="en">
   <head>
-    <title> Booking Form - XYZ Hotels </title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel = "stylesheet" href = "bookhall.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<title>Registration Form in HTML CSS</title>-->
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
- 
-	<!-- OUR BOOKING FORM MARKUP -->
-	<div class="smart-wrap">
-		<div class="smart-forms smart-container wrap-2">
-		
-		  <div class="form-header header-primary">
-			<h4><i class="fa fa-calendar"></i>Make Room Reservations in Minutes</h4>
-		  </div>
-		  
-		  <form method="post" action="/" id="booking-form">
-			<div class="form-body">
-			
-			 <!-- OUR FORM ELEMENTS WILL GO HERE -->                                                
-			 <div class="section">
-				<label for="guestname" class="field-label">Please Enter Your Name</label>
-				<label for="guestname" class="field prepend-icon">
-				  <input type="text" name="guestname" id="guestname" class="gui-input" required="" placeholder="John Doe/Jane Doe">
-				  <span class="field-icon"><i class="fa fa-user"></i></span>  
-				</label>
-			  </div>
-							
-			  <div class="frm-row">
-				<div class="section colm colm6">
-				  <label for="guestemail" class="field-label">Email Address</label>
-				  <label for="guestemail" class="field prepend-icon">
-					<input type="email" name="guestemail" id="guestemail" class="gui-input" required="" placeholder="john@something.com">
-					<span class="field-icon"><i class="fa fa-envelope"></i></span>  
-				  </label>
-				</div>
-				
-				<div class="section colm colm6">
-				  <label for="guestelephone" class="field-label">Telephone / Mobile</label>
-				  <label for="guestelephone" class="field prepend-icon">
-					<input type="text" name="guestelephone" id="guestelephone" class="gui-input" required="" placeholder="Telephone / Moble Number">
-					<span class="field-icon"><i class="fa fa-phone-square"></i></span>  
-				  </label>
-				</div>
-			  </div>
-			  <div class="frm-row">
-				<div class="section colm colm6">
-				  <label for="adults" class="field-label">Number of Adults</label>
-				  <label for="adults" class="field prepend-icon">
-					<input type="number" id="adults" name="adults" class="gui-input" required="" placeholder="Number of adults">
-					<span class="field-icon"><i class="fa fa-users"></i></span>  
-				  </label>
-				</div>
-				
-				<div class="section colm colm6">
-				  <label for="children" class="field-label">Number of Children</label>
-				  <label for="children" class="field prepend-icon">
-					<input type="number" id="children" name="children" class="gui-input" required="" placeholder="Number of children">
-					<span class="field-icon"><i class="fa fa-users"></i></span>  
-				  </label>
-				</div>
-			  </div>
-			  <div class="frm-row">
-				<div class="section colm colm6">
-				  <label for="checkin" class="field-label">Check-in Date</label>
-				  <label for="checkin" class="field prepend-icon">
-					<input type="text" id="checkin" name="checkin" class="gui-input" required="" placeholder="mm/dd/yyyy">
-					<span class="field-icon"><i class="fa fa-calendar"></i></span>  
-				  </label>
-				</div>
-				
-				<div class="section colm colm6">
-				  <label for="checkout" class="field-label">Check-out Date</label>
-				  <label for="checkout" class="field prepend-icon">
-					<input type="text" id="checkout" name="checkout" class="gui-input" required="" placeholder="mm/dd/yyyy">
-					<span class="field-icon"><i class="fa fa-calendar"></i></span>  
-				  </label>
-				</div>
-			  </div>
-			  <div class="spacer-t20 spacer-b30">
-				<div class="tagline"><span>Please answer these questions for a pleasant stay</span></div>
-			  </div>
-			  <div class="frm-row">
-				<div class="option-group field">
-				
-				  <div class="section colm colm6">
-					<label class="switch">
-					  <input type="checkbox" name="switch1" id="switch1" value="switch1">
-					  <span class="switch-label" data-on="YES" data-off="NO"></span>
-					  <span>Will you be bringing a pet?</span>
-					</label>
-				  </div>
-					  
-				  <div class="section colm colm6">
-					<label class="switch">
-					  <input type="checkbox" name="switch2" id="switch2" value="switch2">
-					  <span class="switch-label" data-on="YES" data-off="NO"></span>
-					  <span>Do you need us to pick you up?</span>
-					</label>
-				  </div>
-							
-				</div>
-			  </div>
-			  <div class="section">
-				<label for="comment" class="field-label">Anything else we should know about?</label>
-				<label for="comment" class="field prepend-icon">
-				  <textarea class="gui-textarea" id="comment" name="comment" placeholder="Let us know about any special accommodation needs"></textarea>
-				  <span class="field-icon"><i class="fa fa-comments"></i></span>
-				  <span class="input-hint"> 
-					<strong>Please:</strong> Be as descriptive as possible
-				  </span>   
-				</label>
-			  </div>
+    <section class="container">
+      <header>Registration Form</header>
+      <form action="#" class="form">
+        <div class="input-box">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter full name" required />
+        </div>
 
-			</div>
-			<div class="form-footer">
-			  <button type="submit" class="button btn-primary">Confirm Booking</button>
-			  <button type="reset" class="button">Cancel</button>
-			</div>
-			
-		  </form>
-		    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-			<script type="text/javascript" src="js/jquery.form.min.js"></script>
-			<script type="text/javascript" src="js/jquery-ui-custom.min.js"></script>
-			<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-			<script type="text/javascript" src="js/additional-methods.min.js"></script>
+        <div class="input-box">
+          <label>Email Address</label>
+          <input type="text" placeholder="Enter email address" required />
+        </div>
 
-		</div>
-	  </div>
- 
+        <div class="column">
+          <div class="input-box">
+            <label>Phone Number</label>
+            <input type="number" placeholder="Enter phone number" required />
+          </div>
+          <div class="input-box">
+            <label>Event Date</label>
+            <input type="date" placeholder="Enter birth date" required />
+          </div>
+        </div>
+        <div class="gender-box">
+          <h3>Hall</h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input type="radio" id="check-male" name="gender" checked />
+              <label for="check-male">hall</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" />
+              <label for="check-female">hall</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" />
+              <label for="check-other">hall</label>
+            </div>
+          </div>
+        </div>
+        <div class="input-box address">
+          <label>Event Description</label>
+          <input type="text" placeholder="Enter your Registration Number" required />
+          <input type="text" placeholder="Event details" required />
+          <div class="column">
+            <div class="select-box">
+              <select>
+                <option hidden>Halls</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+				<option>5</option>
+				<option>6</option>
+              </select>
+            </div>
+            <input type="text" placeholder="Enter your club name" required />
+          </div>
+          <div class="column">
+            <input type="text" placeholder="Enter your club mentor details" required />
+            <input type="number" placeholder="Enter mentor's contact info" required />
+          </div>
+        </div>
+        <button>Submit</button>
+      </form>
+    </section>
   </body>
 </html>
