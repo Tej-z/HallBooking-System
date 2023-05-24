@@ -1,181 +1,140 @@
-/* Globals */
-
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-}
-
-body {
-    font-family: "Inter", sans-serif;
-    max-width: 55rem;
-    padding: 2rem 1.5rem;
-    margin: 0 auto;
-    color: #241623;
-    background: #eef2f4;
+.our-team {
+    text-align: center;
+    transition: all 0.5s ease 0s;
+    margin-bottom: 30px;
   }
   
-  h1 {
-    font-weight: 900;
-    font-size: 2.7rem;
-    max-width: 20ch;
+  .our-team:hover {
+    box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   }
   
-  p {
-    max-width: 60ch;
-  }
-  
-  a {
-    color: currentcolor;
-  }
-  
-  /* Utilities */
-  .auto-grid {
-    display: grid;
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(var(--auto-grid-min-size, 14rem), 1fr)
-    );
-    grid-gap: var(--auto-grid-gap, 0);
-    padding: 0;
-  }
-  
-  .flow > * + * {
-    margin-top: var(--flow-space, 1em);
-  }
-  
-  /* Composition */
-  .team {
-    --flow-space: 2em;
-  }
-  
-  /* Blocks */
-  .profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    aspect-ratio: 1/1;
-    position: relative;
-    padding: 1.5rem;
-    color: #ffffff;
-    backface-visibility: hidden;
-    text-decoration: none;
+  .our-team .pic {
     overflow: hidden;
+    position: relative;
   }
   
-  .profile::before,
-  .profile::after {
+  .our-team .pic:before,
+  .our-team .pic:after {
+    content: "";
+    width: 200%;
+    height: 80%;
+    background: rgba(38, 37, 37, 0.8);
+    position: absolute;
+    top: -100%;
+    left: -4%;
+    transform: rotate(45deg);
+    transition: all 0.5s ease 0s;
+  }
+  
+  .our-team .pic:after {
+    background: rgba(8, 75, 77, 0.8);
+    top: auto;
+    left: auto;
+    bottom: -100%;
+    right: -4%;
+  }
+  
+  .our-team:hover .pic:before {
+    top: 0;
+  }
+  
+  .our-team:hover .pic:after {
+    bottom: 0;
+  }
+  
+  .our-team .pic img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .our-team .social {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    bottom: 45%;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+    transition: all 0.5s ease 0.3s;
+  }
+  
+  .our-team:hover .social {
+    opacity: 1;
+  }
+  
+  .our-team .social li {
+    display: inline-block;
+  }
+  
+  .our-team .social li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: #fff;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .our-team .social li a:after {
     content: "";
     width: 100%;
     height: 100%;
-    position: absolute;
-    /*inset: 0;*/
-    top: 0;
-    left: 0;
-  }
-  
-  .profile::before {
-    background: linear-gradient(
-      to top,
-      hsl(0 0% 0% / 0.79) 0%,
-      hsl(0 0% 0% / 0.787) 7.8%,
-      hsl(0 0% 0% / 0.779) 14.4%,
-      hsl(0 0% 0% / 0.765) 20.2%,
-      hsl(0 0% 0% / 0.744) 25.3%,
-      hsl(0 0% 0% / 0.717) 29.9%,
-      hsl(0 0% 0% / 0.683) 34.3%,
-      hsl(0 0% 0% / 0.641) 38.7%,
-      hsl(0 0% 0% / 0.592) 43.3%,
-      hsl(0 0% 0% / 0.534) 48.4%,
-      hsl(0 0% 0% / 0.468) 54.1%,
-      hsl(0 0% 0% / 0.393) 60.6%,
-      hsl(0 0% 0% / 0.31) 68.3%,
-      hsl(0 0% 0% / 0.216) 77.3%,
-      hsl(0 0% 0% / 0.113) 87.7%,
-      hsl(0 0% 0% / 0) 100%
-    );
-    transition: 300ms opacity linear;
-  }
-  
-  .profile::after {
-    background: linear-gradient(
-      45deg,
-      hsl(5 97% 63% / 0.7) 0,
-      hsl(5 97% 63% / 0) 100%
-    );
-    opacity: 0;
-    transition: 300ms opacity linear;
-  }
-  
-  .profile > * {
-    z-index: 1;
-  }
-  
-  .profile img {
-    width: 100%;
-    height: 100%;
+    background: #db162f;
+    border-radius: 0 20px 20px 20px;
     position: absolute;
     top: 0;
     left: 0;
-    margin: 0;
     z-index: -1;
-    object-fit: cover;
-    filter: grayscale(1);
-    transition: filter 200ms ease, transform 250ms linear;
+    transition: all 0.3s ease 0s;
   }
   
-  .profile h2,
-  .profile p {
-    transform: translateY(2ex);
+  .our-team .social li a:hover:after {
+    transform: rotate(180deg);
   }
   
-  .profile h2 {
-    font-size: 1.7rem;
-    line-height: 1.2;
-    font-weight: 900;
-    letter-spacing: 0.03ch;
-    transition: 300ms transform ease;
+  .our-team .team-content {
+    padding: 20px;
   }
   
-  .profile p {
-    font-size: 1.2rem;
-    font-weight: 500;
+  .our-team .title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #047168;
+    text-transform: uppercase;
+    margin-bottom: 7px;
   }
   
-  .profile p {
-    opacity: 0;
-    transition: 300ms opacity linear, 300ms transform ease-in-out;
+  .our-team .post {
+    display: block;
+    font-size: 17px;
+    font-weight: 600;
+    color: #707070;
+    text-transform: capitalize;
   }
   
-  .profile:focus {
-    outline: 0.5rem solid white;
-    outline-offset: -0.5rem;
+  @media only screen and (max-width: 990px) {
+    .our-team {
+      margin-bottom: 30px;
+    }
   }
   
-  .profile:hover :is(h2, p),
-  .profile:focus :is(h2, p) {
-    transform: none;
+  /* Additional CSS for arranging the boxes */
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   
-  .profile:hover::after,
-  .profile:focus::after,
-  .profile:hover::before,
-  .profile:focus::before {
-    opacity: 0.7;
-  }
-  
-  .profile:hover p,
-  .profile:focus p {
-    opacity: 1;
-    transition-delay: 200ms;
-  }
-  
-  .profile:hover img,
-  .profile:focus img {
-    filter: grayscale(0);
-    transform: scale(1.05) rotate(1deg);
+  .col-md-4,
+  .col-sm-6 {
+    flex-basis: calc(33.33% - 10px); /* Adjust the width as needed */
+    margin-bottom: 20px;
   }
   
